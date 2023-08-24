@@ -11,12 +11,12 @@ export const component = defineComponent({
 });
 export const getComponentB = (message) => {
   const { setup, ...others } = component;
-  return defineComponent({
+  return {
     setup() {
       return { ...setup(message) };
     },
     ...others
-  });
+  };
 };
 export default component;
 </script>
